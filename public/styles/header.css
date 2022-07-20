@@ -1,0 +1,17 @@
+header {
+  position: relative;
+  top: -120px;
+  height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  /* background-color: #615163; */
+  background-image: url("/images/bg-fabric.png");
+}
+
+.pfp {
+  z-index: -1;
+}
