@@ -1,3 +1,5 @@
+<!-- npm run local to get this thing started -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -56,7 +58,8 @@
         <h2>Compose Tweet</h2>
         <form action="/tweets" method="POST">
           <label for="tweet-text">If you don't have anything nice to say, post it here!</label>
-          <textarea name="text" id="tweet-text" minlength="1" maxlength="140" required></textarea>
+          <textarea name="text" id="tweet-text"></textarea>
+          <!-- add [maxlength="140" required] (omit brackets) to above tag later -->
           <div>
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
@@ -65,14 +68,49 @@
       </section>
 
      <div class = "container">
-      <article>
-        sometimes i call the number on the dog missing posters and just bark
+      <article class="tweet">
+        <header>
+          <div class = "luser-left"><img src="images/profile-hex.png">Punished Garf</div>
+          <div class="luser-right">@METAGARF1999</div>
+        </header>
+        <p>sometimes i call the number on the dog missing posters and just bark</p>
+        <footer>
+          <div class = "time">2 days ago</div>
+          <div class = "icons">
+            <i class="fa-solid fa-flag"></i><i class="fa-solid fa-recycle"></i>
+                    <i class="fa-solid fa-heart"></i>
+
+          </div>
+        </footer>
+      </article>
+      <article class="tweet">
+        <header>
+          <div class = "luser-left"><img src="images/profile-hex.png">Mrs Bada B1ng</div>
+          <div class="luser-right">@simpranoJerseyBaby</div>
+        </header>
+        <p>the girls were super loud on the 6hr drive to michigan last week so before we hit the road today we're watching the highway scene from Final Destination 2
+        </p>
+        <footer>
+          <div class = "time">4 days ago</div>
+          <div class = "icons">
+            F R L
+          </div>
+        </footer>
+      </article>
+      <article class="tweet">
+        <header>
+          <div class = "luser-left"><img src="images/profile-hex.png">certified TV enjoyer</div>
+          <div class="luser-right">@jane13898971</div>
+        </header>
+        <p>i feed dog treats to my little nephew! they are cheap snacks</p>
+        <footer>
+          <div class = "time">4 days ago</div>
+          <div class = "icons">
+            F R L
+          </div>
+        </footer>
       </article>
       <article>
-        the girls were super loud on the 6hr drive to michigan last week so before we hit the road today we're watching the highway scene from Final Destination 2
-      </article>
-      <article>
-        i feed dog treats to my little nephew! they are cheap snacks
       </article>
      </div>
     </main>

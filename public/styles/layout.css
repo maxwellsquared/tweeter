@@ -37,12 +37,72 @@ main {
   flex-direction: column;
 }
 
-main article {
+article.tweet {
   margin-top: 2em;
-  color: ##BADA55;
-  border-top: 2px solid #BADA55;
+  color: #BADA55;
+  border: 2px solid #BADA55;
 }
 
+article.tweet:hover {
+  box-shadow: 10px 10px 10px red;
+}
+
+
+article.tweet header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height:80px;
+  margin: 10px;
+  background-image: none;
+}
+
+article.tweet header div.luser-left {
+  display: flex;
+  flex-direction: row;
+  bg-color:pink;
+  /* WHY AIN'T THIS PINK?? */
+  align-items: center;
+}
+
+article.tweet header div.luser-right {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: 25px;
+}
+
+
+article.tweet header img {
+  max-width: 15%;
+}
+
+article.tweet p {
+  margin: .25em;
+  padding: 1em;
+  border-bottom: 2px solid #BADA55;
+}
+
+article.tweet footer {
+  font-size: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 15px;
+}
+
+article.tweet footer {
+  font-size: 12px;
+}
+
+.icons:hover {
+  color:aqua;
+}
+
+i:hover {
+  color:black;
+}
+/*  == HOW COME THIS ^^ IS INHERITING REGULAR HEADER PROPERTIES AHHHH */
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
