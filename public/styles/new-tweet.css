@@ -10,7 +10,7 @@
 
 .new-tweet form label {
   position: absolute;
-  color: #5ecbd1;
+  color: #549194;
   display: flex;
   flex-direction: column;
 }
@@ -21,20 +21,27 @@
   justify-content: space-between;
 }
 
-.new-tweet form div output {
-  color:rgb(69, 82, 20);
-  font-size: 18px;
-  font-family: 'Bungee', sans-serif;
-}
+/* .new-tweet form div output {
+
+} */
 
 .new-tweet form textarea {
   border-bottom: 5px black;
   background-color: aqua;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 
 .new-tweet button {
   background-color: blueviolet;
   color:aquamarine;
+  font-size: 18px;
+  font-family: 'Bungee', sans-serif;
+  border-radius: 5px;
+}
+
+.counter {
+  color:#BADA55;
   font-size: 18px;
   font-family: 'Bungee', sans-serif;
 }
