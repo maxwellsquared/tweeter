@@ -3,65 +3,87 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
-const createTweetElement = function(tweet) {
-  const $tweet = $(`
-  <article class="tweet">
-  <header>
-    <div class = "luser-left"><img src="${tweet.user.avatars}">${tweet.user.name}</div>
-    <div class="luser-right">${tweet.user.handle}</div>
-  </header>
-  <p>${tweet.content.text}
-  </p>
-  <footer>
-    <div class = "time">${(Date.now() - tweet.created_at) / 1000 / 60 / 60 / 24} days ago</div>
-    <div class = "icons">
-    <i class="fa-solid fa-flag"></i><i class="fa-solid fa-recycle"></i>
-    <i class="fa-solid fa-heart"></i>
-    </div>
-  </footer>
-</article>
-  `)
-  return $tweet;
-}
-
-// test code
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-  "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-  "created_at": 1461116232227
-};
+$(document).ready(function() {
 
 
-$(document).ready(function () {
+  // from ajax with jquery exercise
+  // $(function() {
+  //   const $button = $('#load-more-posts');
+  //   $button.on('click', function () {
+  //     console.log('Button clicked, performing ajax call...');
+  //     $.ajax('more-posts.html', { method: 'GET' })
+  //     .then(function (morePostsHtml) {
+  //       console.log('Success: ', morePostsHtml);
+  //       $button.replaceWith(morePostsHtml);
+  //     });
+  //   });
+  // });
 
-// let someVariable = "<p>Here is some <b>HTML</b> you can put in here.</p>";
-//   $( "#element" ).append( "String", someVariable );
-// ^^ use append to add tweets!
+  //let's try and do something with the submit button
+  // $(() => {
+  const $form = $('.tweetForm');
+
+  // $form.on('submit', (evt) => {
+  //   evt.preventDefault();
+  //   console.log("button works!");
+  //   let tweetText = {"text": $('#tweet-text').val()};
+  //   console.log(tweetText);
+  //   $.post('/tweets', $(tweetText).serialize());
+  // });
+
+  $(".tweetForm").submit(function(evt) {
+    evt.preventDefault();
+    console.log(this);
+    console.log($(this).serialize());
+    console.log("button works!");
+    $.post('/tweets', $(this).serialize());
+  });
 
 
 
-// search example from the movie app
-// $(() => {
-//   $('#element_id').on('submit', (evt) => {
-//     evt.preventDefault();
-//     $.get(`https://api.whateversite.com/search/someaddress?q=${evt.target.search.value}`,
-//     (data) => {
-//       console.log("data", data);
-//       $('#other_id').empty();
-//       appendFunction(data);
-//     })
-//   })
-// })
 
-const $tweet = createTweetElement(tweetData);
-console.log($tweet);
-console.log("test worked")
+  const createTweetElement = function(tweet) {
+    const $tweet = `<article class="tweet">
+    <header>
+      <div class = "luser-left"><img src="${tweet.user.avatars}">${tweet.user.name}</div>
+      <div class="luser-right">${tweet.user.handle}</div>
+    </header>
+    <p>${tweet.content.text}
+    </p>
+    <footer>
+      <div class = "time">${Math.floor((Date.now() - tweet.created_at) / 1000 / 60 / 60 / 24)} days ago <br> ${tweet.created_at.toString()}</div>
+      <div class = "icons">
+      <i class="fa-solid fa-flag"></i><i class="fa-solid fa-recycle"></i>
+      <i class="fa-solid fa-heart"></i>
+      </div>
+    </footer>
+  </article>`;
+  
+    return $tweet;
+  };
+  
 
-})
+  const renderTweets = function(tweetArray) {
+    tweetArray.forEach(tweet => {
+      $('.tweets-container').prepend(createTweetElement(tweet));
+    });
+  };
+
+  const loadTweets = function() {
+    $.ajax('/tweets', { method: 'GET' })
+      .then(function (someStuff) {
+        console.log("HUGE SUGGESS WOW");
+        console.log(someStuff[0]);
+        //$button.replaceWith(morePostsHtml);
+        renderTweets(someStuff);
+      });
+  };
+
+  loadTweets();
+  
+  // test the function with fake data
+  //renderTweets(tweetData);
+
+
+
+});

@@ -1,7 +1,6 @@
 $(document).ready(function () {
   
-  let newTweet = document.querySelector("form textarea");
-  let charsLeft = document.querySelector(".counter");
+
 
   //hide da text label
   // newTweet.addEventListener("focus", (event) => {
@@ -11,9 +10,9 @@ $(document).ready(function () {
 
   // hide text label - fancy new version!
   $("form textarea").on('focus', function(event) {
-    console.log($("form label")[0].innerText); // <-- WTF?!?!?!!!?! THIS WORKS BUT WHY DOES IT NEED [0]
-    console.log(document.querySelector("form label").innerText)
-    // GET SOME HELP - WHY IS THIS?!?!?!!? 
+    // console.log($("form label")[0].innerText); // <-- WTF?!?!?!!!?! THIS WORKS BUT WHY DOES IT NEED [0]
+    // console.log(document.querySelector("form label").innerText);
+    // GET SOME HELP - WHY IS THIS?!?!?!!?
     // --------------- SERIOUSLY GET A MENTOR AND ASK WHY YOU NEED TO GET FORM LABEL AT [0] WTF ------
     $("form label")[0].style.display="none";
 
@@ -22,7 +21,7 @@ $(document).ready(function () {
   // // count da input
   // newTweet.addEventListener("input", (event) => {
   //   charsLeft.innerHTML = 140 - newTweet.value.length;
-  //   // INSTRUCTIONS SAY TO USE THIS AND .val() FROM JQUERY... BUT WHY???
+  //   // INSTRUCTIONS SAY TO USE THIS AND .val() FROM JQUERY... BUT WHY??? -- apparently because you're already using jquery
   // });
 
   $("form textarea").on('input', function(event) {
@@ -31,10 +30,10 @@ $(document).ready(function () {
     // IS THERE A BETTER WAY TO DO THIS?? THE ARRAYS LOOK WEIRD.
     // ============== ^^^ ============
     if ($(this).val().length > 140) {
-      $(this).parent()[0][2].style.color="red";
+      $(this).parent()[0][2].style.color = "red";
     }
-  })
+  });
   
 
 
-})
+});
