@@ -32,9 +32,9 @@
   margin-bottom: 10px;
 }
 
-.new-tweet button {
+.sendbutton {
   background-color: blueviolet;
-  color:aquamarine;
+  color:#BADA55;
   font-size: 18px;
   font-family: 'Bungee', sans-serif;
   border-radius: 5px;
