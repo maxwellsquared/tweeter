@@ -4,6 +4,7 @@
 <html lang="en">
   <head>
     <!-- Meta Information -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
@@ -42,7 +43,7 @@
         <i class="fa-solid fa-angles-down"></i>
       </div>
     </nav>
-
+    <div class = "container">
     <header>
       <div class="pfp">
           <img src="/images/profile-hex.png"> 
@@ -57,12 +58,9 @@
     <main>
       <section class="new-tweet">
         <div class="error-message"></div>
-        <h2>Compose Tweet</h2>
-        <!-- <form action="/tweets" method="POST"> -->
         <form class = "tweetForm">
           <label for="tweet-text">If you don't have anything nice to say, post it here!</label>
           <textarea name="text" id="tweet-text"></textarea>
-          <!-- add [maxlength="140" required] (omit brackets) to above tag later -->
           <div>
             <button type="submit" class = "sendbutton">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
@@ -71,6 +69,7 @@
       </section>
      <div class = "tweets-container">
      </div>
+    </div>
     </main>
   </body>
 </html>

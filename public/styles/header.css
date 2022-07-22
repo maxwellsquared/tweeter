@@ -1,9 +1,4 @@
 body header {
-  position: relative;
-  top: 0;
-  margin-top: 120px;
-  height: 400px;
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,5 +9,40 @@ body header {
 }
 
 .pfp {
-  z-index: -1;
+  /* z-index: -1; */
+  max-height: 80px;
 }
+
+.displayName {
+  margin: 2em;
+}
+
+/* ==== tablet ==== */
+
+@media only screen and (max-width: 1023px) {
+  header {
+    height: 400px;
+    width: 100%;
+    margin-top: 0;
+  }
+  .pfp {
+    margin-top: 2em;
+  }
+}
+
+/* ==== desktop ==== */
+@media only screen and (min-width: 1024px) {
+  header {
+    height: 450px; 
+    width: 60%;
+    margin-right: 2em;
+    margin-left: 2em;
+  }
+  .pfp {
+    margin-top: 2em;
+  }
+  .displayName {
+    margin: 3em;
+  }
+}
+

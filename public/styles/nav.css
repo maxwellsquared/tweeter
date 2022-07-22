@@ -1,19 +1,14 @@
 nav {
-  position: fixed;
   top:0;
   height: 120px;
   width: 100%;
   padding-left: 1.5em;
   padding-right: 1.5em;
-  border-radius: 0px;
   color: #edffab;
-  box-shadow: 0px 10px 50px 20px #76527a;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   z-index: 9;
-  background-color: #89608e;
-
 }
 
 #nav-logo {
@@ -51,3 +46,21 @@ nav {
 #nav-right i {
   margin-bottom: 10px;
 }
+
+/* ==== tablet ==== */
+
+@media only screen and (max-width: 1023px) {
+  nav {
+    background-color: transparent;
+    position: fixed;
+  }
+}
+
+/* ==== desktop ==== */
+@media only screen and (min-width: 1024px) {
+  nav {
+    background-color: #89608e;
+    margin-bottom: 120px;
+  }
+}
+

@@ -57,7 +57,7 @@ $(document).ready(function() {
 
   const createTweetElement = function(tweet) {
     const $tweet = `<article class="tweet">
-    <header>
+    <header class = "tweet-header">
       <div class = "luser-left"><img src="${tweet.user.avatars}">${tweet.user.name}</div>
       <div class="luser-right">${tweet.user.handle}</div>
     </header>

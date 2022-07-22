@@ -10,7 +10,7 @@
 
 .new-tweet form label {
   position: absolute;
-  color: #549194;
+  color: black;
   display: flex;
   flex-direction: column;
 }
@@ -21,15 +21,17 @@
   justify-content: space-between;
 }
 
-/* .new-tweet form div output {
-
-} */
-
 .new-tweet form textarea {
-  border-bottom: 5px black;
-  background-color: aqua;
-  border-radius: 5px;
+  color: black;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 5px solid black;
+  background-color: transparent;
+  border-radius: 0px;
   margin-bottom: 10px;
+  resize: none;
+  outline: none;
 }
 
 .sendbutton {

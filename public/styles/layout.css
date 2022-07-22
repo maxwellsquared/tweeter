@@ -14,6 +14,10 @@ html {
  * Global layout stuff
  */
 
+.container {
+  display: flex;
+}
+
 body {
   color: #BADA55;
   background-color: #89608e;
@@ -29,6 +33,9 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow-y: auto;
+  scroll-snap-type: inline mandatory;
+  scroll-behavior: smooth;
 
 }
 
@@ -48,23 +55,24 @@ article.tweet:hover {
 }
 
 
-article.tweet header {
+.tweet-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   height:80px;
+  width: 90%;
   margin: 10px;
   background-image: none;
 }
 
-article.tweet header div.luser-left {
+.tweet-header div.luser-left {
   display: flex;
   flex-direction: row;
   bg-color:pink;
   align-items: center;
 }
 
-article.tweet header div.luser-right {
+.tweet-header div.luser-right {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -72,7 +80,7 @@ article.tweet header div.luser-right {
 }
 
 
-article.tweet header img {
+.tweet-header img {
   max-width: 15%;
 }
 
@@ -94,6 +102,10 @@ article.tweet footer {
   font-size: 12px;
 }
 
+.icons i {
+  margin: 5px;
+}
+
 .icons:hover {
   color:aqua;
 }
@@ -101,12 +113,30 @@ article.tweet footer {
 i:hover {
   color:black;
 }
-/*  == HOW COME THIS ^^ IS INHERITING REGULAR HEADER PROPERTIES AHHHH */
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-/* 
----- FONTS ----
- font-family: 'Bungee', cursive;
-font-family: 'Source Sans Pro', sans-serif; */
+
+
+/* ==== tablet ==== */
+
+@media only screen and (max-width: 1023px) {
+  .container {
+    flex-direction: column;
+  }
+  main {
+    padding-top: 25px;
+  }
+}
+
+/* ==== desktop ==== */
+@media only screen and (min-width: 1024px) {
+  .container {
+    flex-direction: row;
+  }
+
+  main {
+    margin-left: 2em;
+    /* margin-right: 2em; */
+  }
+
+  
+}
 
