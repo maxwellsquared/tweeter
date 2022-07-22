@@ -29,8 +29,11 @@ $(document).ready(function () {
     // ============== v v ===============
     // IS THERE A BETTER WAY TO DO THIS?? THE ARRAYS LOOK WEIRD.
     // ============== ^^^ ============
-    if ($(this).val().length > 140) {
+    if ($(this).val().length > 140) {                 // WHY CAN'T I GET $(this).val() IN CLIENT.JS
       $(this).parent()[0][2].style.color = "red";
+    }
+    if ($(this).val().length <= 140) {
+      $(this).parent()[0][2].style.color = "#BADA55"; 
     }
   });
   

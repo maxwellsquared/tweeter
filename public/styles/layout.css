@@ -15,14 +15,14 @@ html {
  */
 
 body {
-  color: #edffab;
+  color: #BADA55;
   background-color: #89608e;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
 main {
-  color: #edffab;
+  color: #BADA55;
   background-color: #89608e;
   width: 90%;
   margin: auto;
@@ -61,7 +61,6 @@ article.tweet header div.luser-left {
   display: flex;
   flex-direction: row;
   bg-color:pink;
-  /* WHY AIN'T THIS PINK?? */
   align-items: center;
 }
 
