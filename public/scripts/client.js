@@ -40,6 +40,8 @@ $(document).ready(function() {
       console.log("worked!", $(evt.target).serialize()); 
       // send the tweet to the tweets page, then asynchronously call loadTweets()
       $.post('/tweets', $(evt.target).serialize()).then(()=>{loadTweets()});
+      $("#tweet-text").val("");
+      $(".counter").val("140");
     };
   });
 
