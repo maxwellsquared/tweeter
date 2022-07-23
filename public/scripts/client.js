@@ -21,7 +21,29 @@ $(document).ready(function() {
 
 
   const $form = $('.tweetForm');
+  let formHidden = true;
 
+  // CLICK BUTTON TO OPEN TWEET FORM
+  $("#down-button").click(function() {
+    if (formHidden) {
+      formHidden = false;
+      $(".new-tweet").slideDown(200, function() {});
+      $('#down-button').css("transform", "rotate(180deg)");
+      $("#tweet-text").focus();
+    } else if (!formHidden) {
+      formHidden = true;
+      $(".new-tweet").slideUp(200, function() {});
+      $('#down-button').css("transform", "rotate(0deg)");
+    }
+  });
+
+  // MAKE ENTER KEY SUBMIT
+  $("#tweet-text").keypress(function(event) {
+    if(event.which === 13 && !event.shiftKey) {
+      event.preventDefault();
+      $(this).closest("form").submit();
+    }
+});
 
   // POST TWEETS
   $(".tweetForm").submit(function(evt) {
@@ -54,14 +76,13 @@ $(document).ready(function() {
     return div.innerHTML;
   };
 
-  // <p>${escape(tweet.content.text)}</p>
   const createTweetElement = function(tweet) {
     const $tweet = `<article class="tweet">
     <header class = "tweet-header">
       <div class = "luser-left"><img src="${tweet.user.avatars}">${tweet.user.name}</div>
       <div class="luser-right">${tweet.user.handle}</div>
     </header>
-
+      <p>${escape(tweet.content.text)}</p>
     <footer>
       <div class = "time">${timeago.format(tweet.created_at)}</div>
       <div class = "icons">

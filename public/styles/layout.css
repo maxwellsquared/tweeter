@@ -46,7 +46,7 @@ main {
 }
 
 article.tweet {
-  margin-top: 2em;
+  margin-bottom: 2em;
   color: #BADA55;
   border: 2px solid #BADA55;
 }
@@ -61,7 +61,6 @@ article.tweet:hover {
   flex-direction: row;
   justify-content: space-between;
   height:80px;
-  width: 90%;
   margin: 10px;
   background-image: none;
 }
