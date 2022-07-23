@@ -24,11 +24,11 @@ $(document).ready(function() {
 
   // MAKE ENTER KEY SUBMIT
   $("#tweet-text").keypress(function(event) {
-    if(event.which === 13 && !event.shiftKey) {
+    if (event.which === 13 && !event.shiftKey) {
       event.preventDefault();
       $(this).closest("form").submit();
     }
-});
+  });
 
   // POST TWEETS
   $(".tweetForm").submit(function(evt) {
@@ -39,22 +39,24 @@ $(document).ready(function() {
     let theTweet = evt.target[0].value;
     if (theTweet === "") {
       $(".error-message").text("⚠️ Error! You need to enter some text. ⚠️");
-      $( ".error-message").slideDown(200, function() {});
-    } else if (theTweet.length > 140) { 
+      $(".error-message").slideDown(200, function() {});
+    } else if (theTweet.length > 140) {
       $(".error-message").text(`⚠️ Error! Tweet too long (${theTweet.length} characters). ⚠️`);
-      $( ".error-message").slideDown(200, function() {});
+      $(".error-message").slideDown(200, function() {});
     } else if (theTweet !== "") {
       // send the tweet to the tweets page, then asynchronously call loadTweets()
-      $.post('/tweets', $(evt.target).serialize()).then(()=>{loadTweets()});
+      $.post('/tweets', $(evt.target).serialize()).then(()=>{
+        loadTweets();
+      });
       $("#tweet-text").val("");
       $(".counter").val("140");
-    };
+    }
   });
 
 
   // escape the text to get rid of any naughty code a user might try to run
   // the "div" is just a placeholder--it's not included!
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -88,7 +90,7 @@ $(document).ready(function() {
 
   const loadTweets = function() {
     $.ajax('/tweets', { method: 'GET' })
-      .then(function (receivedTweets) {
+      .then(function(receivedTweets) {
         $(".tweets-container").empty();
         console.log("new tweets loaded!");
         renderTweets(receivedTweets);

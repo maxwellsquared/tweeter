@@ -55,7 +55,6 @@ article.tweet:hover {
   box-shadow: 10px 10px 10px #BADA55;
 }
 
-
 .tweet-header {
   display: flex;
   flex-direction: row;
@@ -78,7 +77,6 @@ article.tweet:hover {
   align-items: flex-start;
   margin: 25px;
 }
-
 
 .tweet-header img {
   padding-right: 20px;
@@ -137,7 +135,5 @@ i:hover {
     margin-left: 2em;
     margin-right: 2em;
   }
-
-  
 }
 
