@@ -5,22 +5,7 @@
  */
 $(document).ready(function() {
 
-
-  // from ajax with jquery exercise
-  // $(function() {
-  //   const $button = $('#load-more-posts');
-  //   $button.on('click', function () {
-  //     console.log('Button clicked, performing ajax call...');
-  //     $.ajax('more-posts.html', { method: 'GET' })
-  //     .then(function (morePostsHtml) {
-  //       console.log('Success: ', morePostsHtml);
-  //       $button.replaceWith(morePostsHtml);
-  //     });
-  //   });
-  // });
-
-
-  const $form = $('.tweetForm');
+  // variable describing whether the new tweet form is hidden (default true)
   let formHidden = true;
 
   // CLICK BUTTON TO OPEN TWEET FORM
@@ -50,16 +35,15 @@ $(document).ready(function() {
     // avoid the default behaviour
     $(".error-message").text("");
     evt.preventDefault();
+    // put the tweet text into a variable
     let theTweet = evt.target[0].value;
-    console.log("WHAT YOU PUT IN:", theTweet);
     if (theTweet === "") {
       $(".error-message").text("⚠️ Error! You need to enter some text. ⚠️");
-      $( ".error-message" ).slideDown(200, function() {
-      });
+      $( ".error-message").slideDown(200, function() {});
     } else if (theTweet.length > 140) { 
       $(".error-message").text(`⚠️ Error! Tweet too long (${theTweet.length} characters). ⚠️`);
+      $( ".error-message").slideDown(200, function() {});
     } else if (theTweet !== "") {
-      console.log("worked!", $(evt.target).serialize()); 
       // send the tweet to the tweets page, then asynchronously call loadTweets()
       $.post('/tweets', $(evt.target).serialize()).then(()=>{loadTweets()});
       $("#tweet-text").val("");
