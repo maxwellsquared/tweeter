@@ -54,14 +54,14 @@ $(document).ready(function() {
     return div.innerHTML;
   };
 
-
+  // <p>${escape(tweet.content.text)}</p>
   const createTweetElement = function(tweet) {
     const $tweet = `<article class="tweet">
     <header class = "tweet-header">
       <div class = "luser-left"><img src="${tweet.user.avatars}">${tweet.user.name}</div>
       <div class="luser-right">${tweet.user.handle}</div>
     </header>
-    <p>${escape(tweet.content.text)}</p>
+
     <footer>
       <div class = "time">${timeago.format(tweet.created_at)}</div>
       <div class = "icons">

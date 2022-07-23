@@ -42,6 +42,7 @@ main {
 .tweets-container {
   display: flex;
   flex-direction: column;
+  margin-bottom: 30px;
 }
 
 article.tweet {
@@ -81,7 +82,7 @@ article.tweet:hover {
 
 
 .tweet-header img {
-  max-width: 15%;
+  padding-right: 20px;
 }
 
 article.tweet p {
@@ -130,11 +131,12 @@ i:hover {
 @media only screen and (min-width: 1024px) {
   .container {
     flex-direction: row;
+    margin-top: 160px;
   }
 
   main {
     margin-left: 2em;
-    /* margin-right: 2em; */
+    margin-right: 2em;
   }
 
   

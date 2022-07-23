@@ -1,5 +1,6 @@
 nav {
-  top:0;
+  position: fixed;
+  top: 0;
   height: 120px;
   width: 100%;
   padding-left: 1.5em;
@@ -52,14 +53,20 @@ nav {
 @media only screen and (max-width: 1023px) {
   nav {
     background-color: transparent;
-    position: fixed;
+  }
+  .tagline {
+    display: none;
+  }
+  #nav-right i {
+    position: absolute;
+    top: 58px;
   }
 }
 
 /* ==== desktop ==== */
 @media only screen and (min-width: 1024px) {
   nav {
-    background-color: #89608e;
+    background-color: #6f3577;
     margin-bottom: 120px;
   }
 }

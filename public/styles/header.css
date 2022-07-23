@@ -1,4 +1,4 @@
-body header {
+header {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6,15 +6,22 @@ body header {
   z-index: 1;
   /* background-color: #615163; */
   background-image: url("/images/bg-fabric.png");
+  height: fit-content;
+
 }
 
 .pfp {
   /* z-index: -1; */
-  max-height: 80px;
+}
+
+.pfp img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 
 .displayName {
-  margin: 2em;
+  /* margin: 2em; */
 }
 
 /* ==== tablet ==== */
@@ -26,7 +33,9 @@ body header {
     margin-top: 0;
   }
   .pfp {
-    margin-top: 2em;
+    /* margin-top: 2em; */
+    width: 180px;
+    margin-top: 60px;
   }
 }
 
@@ -42,7 +51,7 @@ body header {
     margin-top: 2em;
   }
   .displayName {
-    margin: 3em;
+    /* margin: 3em; */
   }
 }
 
